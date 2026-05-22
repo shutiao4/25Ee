@@ -106,6 +106,7 @@ uint8_t IMU660RA_GetID(void)
 {
     return IMU660RA_ReadReg(IMU660RA_CHIP_ID);
 }
+// 获取当前偏航角（度）
 uint8_t IMU660RA_Init(void)
 {
     uint8_t state = 0;
@@ -144,6 +145,7 @@ uint8_t IMU660RA_Init(void)
     imu_init_ok = (state == 0) ? 1 : 0;
     return state;
 }
+// 获取原始加速度和陀螺仪数据
 void IMU660RA_GetData(int16_t *AccX, int16_t *AccY, int16_t *AccZ,
                       int16_t *GyroX, int16_t *GyroY, int16_t *GyroZ)
 {
@@ -161,8 +163,7 @@ void IMU660RA_GetData(int16_t *AccX, int16_t *AccY, int16_t *AccZ,
     *GyroY = (int16_t)((uint16_t)gyro[3] << 8 | gyro[2]);
     *GyroZ = (int16_t)((uint16_t)gyro[5] << 8 | gyro[4]);
 }
-/* ========== 卡尔曼滤波器 ========== */
-/**
+/* ========== 卡尔曼滤波器 ========== 
  * @brief  初始化卡尔曼滤波器
  * @param  Q  过程噪声协方差（默认0.02）
  *            Q越大 → 滤波器响应越快（但噪声更多）
@@ -202,7 +203,7 @@ static void Kalman_SetAdaptiveQ(float raw_dps)
     else
         kalman_Q = 0.5f;        // 急转弯 → 快速跟踪，减小滞后
 }
-
+// 卡尔曼滤波器更新函数
 static float Kalman_Update(float measurement)
 {
     float K;
@@ -228,7 +229,6 @@ static float Kalman_Update(float measurement)
 
     return kalman_x;
 }
-
 /* ========== 陀螺仪偏航角处理 ========== */
 void IMU660RA_CalibrateGyroZ(void)
 {
