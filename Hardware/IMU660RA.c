@@ -3,7 +3,7 @@
 #include "delay.h"
 
 /* ---- 偏航角计算参数 ---- */
-#define GYRO_SENSITIVITY  66.4f    //
+#define GYRO_SENSITIVITY  33.2f    //
 #define DT                0.02f       // 采样周期 (秒)，20ms
 
 static int16_t gyro_z_bias = 0;      // 陀螺仪Z轴零偏
@@ -386,9 +386,9 @@ void IMU660RA_UpdateYaw_Filtered(int16_t GZ)
     /* 5. 未冻结 → 用滤波后的角速度积分 */
     Yaw += filtered_dps * DT;
 
-    /* 6. 归一化到 -180° ~ +180° */
-    if(Yaw > 91.0f)   Yaw -= 180.0f;
-    if(Yaw <= -91.0f) Yaw += 180.0f;
+    /* 6. 归一化到 0° ~ 360° */
+    if(Yaw >= 360.0f)  Yaw -= 360.0f;
+    if(Yaw < 0.0f)     Yaw += 360.0f;
 }
 
 /**
@@ -399,8 +399,9 @@ void IMU660RA_UpdateYaw(int16_t GZ)
 {
     Yaw += (float)(GZ - gyro_z_bias) / GYRO_SENSITIVITY * DT;
 
-    if(Yaw > 91.0f)   Yaw -= 180.0f;
-    if(Yaw <= -91.0f) Yaw += 180.0f;
+    /* 归一化到 0° ~ 360° */
+    if(Yaw >= 360.0f)  Yaw -= 360.0f;
+    if(Yaw < 0.0f)     Yaw += 360.0f;
 }
 
 float IMU660RA_GetYaw(void)

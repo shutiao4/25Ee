@@ -22,7 +22,7 @@ void IMU660RA_UpdateYaw_Filtered(int16_t GZ);
 // 基于当前 GZ 值更新偏航角（陀螺仪Z轴积分，无滤波，原始行为）
 void IMU660RA_UpdateYaw(int16_t GZ);
 
-// 获取计算得到的偏航角（度，0~360）
+// 获取计算得到的偏航角（度，范围 0° ~ 360°）
 float IMU660RA_GetYaw(void);
 
 // 获取陀螺仪Z轴零偏值
