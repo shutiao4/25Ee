@@ -59,7 +59,7 @@ void IMU660ra_Calibrate(void)
     yaw_offset = IMU660RA_GetYaw(); // 校准后当前yaw设为偏移基准
 
     // 直行PID参数，可根据实际跑车效果继续微调
-    PID_Init(1.3f, 0.0f,7.0f);
+    PID_Init(1.3f, 0.0f,12.0f);
    // 1.2f, 0.0f,4.0f speed=30-40
 
     // 转弯PID参数（Kp=每1°误差对应的PWM增量，Kd抑制过冲）
