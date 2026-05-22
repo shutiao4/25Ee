@@ -31,8 +31,6 @@ static uint8_t kalman_first = 1;    // 首次运行标志
 #define IMU660RA_ACC_RANGE     0x41
 #define IMU660RA_GYR_CONF      0x42
 #define IMU660RA_GYR_RANGE     0x43
-
-/* Keep gyro close to the old MPU6050 scale used by PID.c: 1 LSB ~= 0.03 dps. */
 #define IMU660RA_ACC_SAMPLE    0x02
 #define IMU660RA_GYR_SAMPLE    0x01
 
@@ -49,7 +47,6 @@ static void IMU660RA_WriteReg(uint8_t reg, uint8_t data)
     MyI2C_ReceiveAck();
     MyI2C_Stop();
 }
-
 static uint8_t IMU660RA_ReadReg(uint8_t reg)
 {
     uint8_t data;
@@ -69,7 +66,6 @@ static uint8_t IMU660RA_ReadReg(uint8_t reg)
 
     return data;
 }
-
 static void IMU660RA_ReadRegs(uint8_t reg, uint8_t *data, uint16_t count)
 {
     uint16_t i;
@@ -90,7 +86,6 @@ static void IMU660RA_ReadRegs(uint8_t reg, uint8_t *data, uint16_t count)
     }
     MyI2C_Stop();
 }
-
 static void IMU660RA_WriteRegs(uint8_t reg, const unsigned char *data, uint16_t count)
 {
     uint16_t i;
@@ -107,12 +102,10 @@ static void IMU660RA_WriteRegs(uint8_t reg, const unsigned char *data, uint16_t 
     }
     MyI2C_Stop();
 }
-
 uint8_t IMU660RA_GetID(void)
 {
     return IMU660RA_ReadReg(IMU660RA_CHIP_ID);
 }
-
 uint8_t IMU660RA_Init(void)
 {
     uint8_t state = 0;
@@ -151,7 +144,6 @@ uint8_t IMU660RA_Init(void)
     imu_init_ok = (state == 0) ? 1 : 0;
     return state;
 }
-
 void IMU660RA_GetData(int16_t *AccX, int16_t *AccY, int16_t *AccZ,
                       int16_t *GyroX, int16_t *GyroY, int16_t *GyroZ)
 {
@@ -169,9 +161,7 @@ void IMU660RA_GetData(int16_t *AccX, int16_t *AccY, int16_t *AccZ,
     *GyroY = (int16_t)((uint16_t)gyro[3] << 8 | gyro[2]);
     *GyroZ = (int16_t)((uint16_t)gyro[5] << 8 | gyro[4]);
 }
-
 /* ========== 卡尔曼滤波器 ========== */
-
 /**
  * @brief  初始化卡尔曼滤波器
  * @param  Q  过程噪声协方差（默认0.02）
@@ -397,8 +387,8 @@ void IMU660RA_UpdateYaw_Filtered(int16_t GZ)
     Yaw += filtered_dps * DT;
 
     /* 6. 归一化到 -180° ~ +180° */
-    if(Yaw > 181.0f)   Yaw -= 360.0f;
-    if(Yaw <= -181.0f) Yaw += 360.0f;
+    if(Yaw > 91.0f)   Yaw -= 180.0f;
+    if(Yaw <= -91.0f) Yaw += 180.0f;
 }
 
 /**
@@ -409,9 +399,8 @@ void IMU660RA_UpdateYaw(int16_t GZ)
 {
     Yaw += (float)(GZ - gyro_z_bias) / GYRO_SENSITIVITY * DT;
 
-    /* 归一化到 -180° ~ +180° */
-    if(Yaw > 181.0f)   Yaw -= 360.0f;
-    if(Yaw <= -181.0f) Yaw += 360.0f;
+    if(Yaw > 91.0f)   Yaw -= 180.0f;
+    if(Yaw <= -91.0f) Yaw += 180.0f;
 }
 
 float IMU660RA_GetYaw(void)

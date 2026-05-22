@@ -75,11 +75,17 @@ static uint8_t Timer_Check(void)
     return 0;
 }
 
-// /* ==================== 状态枚举 ==================== *///任务序列
-// typedef enum {
-// } 
-//  CarState;
-// CarState now_state;  // 当前状态机状态
+/* ==================== 状态枚举 ==================== *///任务序列
+typedef enum {
+    
+    STATE1_Straight1,
+     STATE1_Straight2,
+      STATE1_Straight3,
+    STATE1_STOP1,
+ 
+}
+ CarState;
+CarState now_state;  // 当前状态机状态
 
 /* ==================== 函数声明 ==================== */
 static void SystemClock_Config(void);
@@ -167,7 +173,6 @@ static void Key_Scan(void)
         return;
     }
     // 通用初始化操作
-    Buzzer_Beep(100);
     Car_Reset_Angle();
     IMU660ra_Calibrate();
     Car_Update_Angle();
@@ -180,6 +185,7 @@ static void Key_Scan(void)
     {
     case 1:
         task_select = 1;
+        now_state = STATE1_Straight1;
         OLED_Clear();
         OLED_ShowString(1, 1, "Task:1");
         OLED_ShowString(2, 1, "Yaw:");
@@ -216,27 +222,46 @@ static void Car_Run_StateMachine(void)
     {
     /* ---------- 任务1：直行3秒+黑线检测后停车 ---------- */
     case 1:
-     //47.6cm/s
-        Car_Go_Straight_To_Target(30, 0.0f);
-         if(!timer_active) Timer_Start(2100);   // 首次进入时启动
-         if(Timer_Check()) {                     // 时间到
-                Buzzer_Beep(100);
-                Set_PWM(0, 0);
-                car_state = 0x0000; 
-         }
+     //30=47.6cm/s;40=72.3cm/s
+     switch (now_state)
+        {
+        case STATE1_Straight1:
+            Car_Go_Straight_To_Target(30, 1.0f);
+            if(!timer_active) Timer_Start(4201);   // 首次进入时启动
+            if(Timer_Check()) {                  // 时间到
+                now_state = STATE1_Straight2; 
+            }
+            break;
+        case STATE1_Straight2:
+            Car_Go_Straight_To_Target(30, -45.0f);
+            if(!timer_active) Timer_Start(500);   // 首次进入时启动
+            if(Timer_Check()) {                  // 时间到
+                now_state = STATE1_Straight3; 
+            }
+            break;
+        case STATE1_Straight3:
+            Car_Go_Straight_To_Target(30, 0.0f);
+            if(!timer_active) Timer_Start(1000);   // 首次进入时启动
+            if(Timer_Check()) {                  // 时间到
+                now_state = STATE1_STOP1; 
+            }
+            break;
+        case STATE1_STOP1:
+            Buzzer_Beep(100);
+            Set_PWM(0, 0);
+            car_state = 0x0000;
+            break;
+        }
         break;
-
     /* ---------- 任务2 ---------- */
     case 2:
-       // switch (now_state)
-        {
-        
-        // case STATE2_STOP1:
-        //     Buzzer_Beep(100);
-        //     Set_PWM(0, 0);
-        //     car_state = 0x0000;
-        //     break;
-        }
+    //72.3cm/s
+         Car_Go_Straight_To_Target(40, 1.0f);
+            if(!timer_active) Timer_Start(3000);   // 首次进入时启动
+            if(Timer_Check()) {                  // 时间到
+                car_state = 0x0000; 
+                 Set_PWM(0, 0);
+            }
         break;
 
     /* ---------- 任务3：先0°直行1.5秒 → 再20°直行直到黑线 → 循迹 → 直行 → 循迹 → 停 ---------- */

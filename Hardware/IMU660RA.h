@@ -12,12 +12,7 @@ void IMU660RA_GetData(int16_t *AccX, int16_t *AccY, int16_t *AccZ,
 
 // 初始化卡尔曼滤波器参数
 void IMU660RA_Kalman_Init(float Q, float R);
-
 /* ---- 陀螺仪偏航角处理  ---- */
-
-// 初始化并返回状态（封装了 IMU660RA_Init 的调用）
-uint8_t IMU660RA_GetInitStatus(void);
-
 // 陀螺仪Z轴零偏校准（取100次平均值），需在 IMU660RA_Init 成功后调用
 void IMU660RA_CalibrateGyroZ(void);
 
