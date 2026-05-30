@@ -29,12 +29,7 @@
 ".\objects\sys.o"
 ".\objects\main.o"
 ".\objects\stm32f10x_it.o"
-".\objects\buzzer.o"
-".\objects\gpio.o"
-".\objects\imu660ra.o"
-".\objects\imu660ra_config.o"
 ".\objects\key.o"
-".\objects\led.o"
 ".\objects\line.o"
 ".\objects\myi2c.o"
 ".\objects\pid.o"
@@ -42,7 +37,8 @@
 ".\objects\sensor.o"
 ".\objects\timer.o"
 ".\objects\oled.o"
+".\objects\mpu6050.o"
 --strict --scatter ".\Objects\project.sct"
---summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\project.map" -o .\Objects\project.axf

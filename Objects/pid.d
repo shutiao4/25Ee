@@ -29,6 +29,6 @@
 .\objects\pid.o: .\libary\stm32f10x_usart.h
 .\objects\pid.o: .\libary\stm32f10x_wwdg.h
 .\objects\pid.o: .\libary\misc.h
-.\objects\pid.o: Hardware\IMU660RA.h
+.\objects\pid.o: Hardware\MPU6050.h
 .\objects\pid.o: .\system\delay.h
 .\objects\pid.o: Hardware\pwm.h

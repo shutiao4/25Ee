@@ -82,17 +82,8 @@ virtualFolder:
       folders: []
     - name: Hardware
       files:
-        - path: Hardware/Buzzer.c
-        - path: Hardware/Buzzer.h
-        - path: Hardware/gpio.c
-        - path: Hardware/gpio.h
-        - path: Hardware/IMU660RA.c
-        - path: Hardware/IMU660RA.h
-        - path: Hardware/IMU660RA_CONFIG.c
         - path: Hardware/Key.c
         - path: Hardware/Key.h
-        - path: Hardware/LED.c
-        - path: Hardware/LED.h
         - path: Hardware/line.c
         - path: Hardware/line.h
         - path: Hardware/MyI2C.c
@@ -101,13 +92,16 @@ virtualFolder:
         - path: Hardware/PID.h
         - path: Hardware/pwm.c
         - path: Hardware/pwm.h
-        - path: Hardware/sensor.c
-        - path: Hardware/sensor.h
         - path: Hardware/timer.c
         - path: Hardware/timer.h
         - path: Hardware/OLED.c
         - path: Hardware/OLED.h
         - path: Hardware/OLED_Font.h
+        - path: Hardware/sensor.h
+        - path: Hardware/sensor.c
+        - path: Hardware/MPU6050.c
+        - path: Hardware/MPU6050.h
+        - path: Hardware/MPU6050_Reg.h
       folders: []
 dependenceList: []
 outDir: build
@@ -127,7 +121,8 @@ targets:
         - .cmsis/include
         - RTE/_Target 1
       libList: []
-    excludeList: []
+    excludeList:
+      - <virtual_root>/Hardware/IMU660RA_CONFIG.c
     settings: {}
     toolchain: AC5
     toolchainConfigMap:

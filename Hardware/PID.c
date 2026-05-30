@@ -1,5 +1,5 @@
 #include "PID.h"
-#include "IMU660RA.h"
+#include "MPU6050.h"
 #include "delay.h"
 #include "pwm.h"
 
@@ -52,11 +52,11 @@ static void PID_Turn_Init(float kp, float ki, float kd)
     PID_Turn.output = 0;
 }
 // 采样陀螺仪静态零偏，并重置直行PID
-void IMU660ra_Calibrate(void)
+void IMU_Calibrate(void)
 {
-    // 调用IMU660RA零偏校准（100次采样均值+卡尔曼初始化）
-    IMU660RA_CalibrateGyroZ();
-    yaw_offset = IMU660RA_GetYaw(); // 校准后当前yaw设为偏移基准
+    // 调用MPU6050零偏校准（100次采样均值+卡尔曼初始化）
+    MPU6050_CalibrateGyroZ();
+    yaw_offset = MPU6050_GetYaw(); // 校准后当前yaw设为偏移基准
 
     // 直行PID参数，可根据实际跑车效果继续微调
     PID_Init(1.3f, 0.0f,12.0f);
@@ -120,14 +120,14 @@ static float Angle_Normalize(float diff)
 }
 void Car_Update_Angle(void)
 {
-   // Yaw已在main.c主循环中每20ms更新一次（IMU660RA_GetData + IMU660RA_UpdateYaw_Filtered）
+   // Yaw已在main.c主循环中每20ms更新一次（MPU6050_GetData + MPU6050_UpdateYaw_Filtered）
 // Car_Update_Angle() 仅作为获取最新Yaw值的占位函数，避免重复积分
 // 所有PID函数内部调用此函数时不再重复读取IMU
 }
-// 读取当前偏航角（基于IMU660RA，以校准时刻为基准偏移）
+// 读取当前偏航角（基于MPU6050，以校准时刻为基准偏移）
 float Car_Get_Angle(void)
 {
-    float diff = IMU660RA_GetYaw() - yaw_offset;
+    float diff = MPU6050_GetYaw() - yaw_offset;
 
     // 归一化到 -180° ~ +180°
     if (diff > 180.0f)
@@ -153,7 +153,7 @@ void Car_Lock_Current_Heading(void)
 // 重新开始角度计算：以当前IMU yaw为偏移基准
 void Car_Reset_Angle(void)
 {
-    yaw_offset = IMU660RA_GetYaw();
+    yaw_offset = MPU6050_GetYaw();
     straight_target_angle = 0.0f;
     PID_Clear();
 }

@@ -5,8 +5,8 @@
 
 // 左右电机最终目标速度
 extern int V_R, V_L;
-// 陀螺仪零偏校准（实际调用IMU660RA的校准），并初始化直行PID参数
-void IMU660ra_Calibrate(void);
+// 陀螺仪零偏校准（实际调用MPU6050的校准），并初始化直行PID参数
+void IMU_Calibrate(void);
 // 读取陀螺仪并积分更新当前车体角度
 void Car_Update_Angle(void);
 // 获取当前累计偏航角

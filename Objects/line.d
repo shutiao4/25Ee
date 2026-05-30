@@ -1,7 +1,5 @@
 .\objects\line.o: Hardware\line.c
 .\objects\line.o: Hardware\Line.h
-.\objects\line.o: Hardware\sensor.h
-.\objects\line.o: .\system\sys.h
 .\objects\line.o: .\start\stm32f10x.h
 .\objects\line.o: .\start\core_cm3.h
 .\objects\line.o: D:\keil5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -31,3 +29,5 @@
 .\objects\line.o: .\libary\stm32f10x_usart.h
 .\objects\line.o: .\libary\stm32f10x_wwdg.h
 .\objects\line.o: .\libary\misc.h
+.\objects\line.o: Hardware\sensor.h
+.\objects\line.o: .\system\sys.h

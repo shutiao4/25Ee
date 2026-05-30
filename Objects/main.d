@@ -29,7 +29,10 @@
 .\objects\main.o: .\libary\stm32f10x_wwdg.h
 .\objects\main.o: .\libary\misc.h
 .\objects\main.o: .\system\delay.h
-.\objects\main.o: .\Hardware\IMU660RA.h
+.\objects\main.o: .\Hardware\MPU6050.h
 .\objects\main.o: .\Hardware\OLED.h
-.\objects\main.o: .\Hardware\Buzzer.h
 .\objects\main.o: .\Hardware\PID.h
+.\objects\main.o: .\Hardware\timer.h
+.\objects\main.o: .\Hardware\sensor.h
+.\objects\main.o: .\system\sys.h
+.\objects\main.o: .\Hardware\line.h
