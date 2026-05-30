@@ -1,0 +1,869 @@
+[2026-05-30 16:22:06]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 16:22:06]	compilation failed at : "e:\小车\25E-Car\Hardware\line.c", exit code: 1
+command: 
+  "D:\keil5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -Istart -Iuser -Ilibary -Isystem -IHardware -I.cmsis/include -I"RTE/_Target 1" -D"USE_STDPERIPH_DRIVER" --cpu Cortex-M3 --li --c99 -O0 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o ".\build\Target 1\.obj\Hardware\line.o" --no_depend_system_headers --depend ".\build\Target 1\.obj\Hardware\line.d" .\Hardware\line.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\Hardware\line.c", line 20: Error:  #5: cannot open source input file "moto.h": No such file or directory
+  #include "moto.h"
+                   ^
+.\Hardware\line.c: 0 warnings, 1 error
+
+[2026-05-30 16:22:19]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 16:22:20]	compilation failed at : "e:\小车\25E-Car\user\main.c", exit code: 1
+command: 
+  "D:\keil5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -Istart -Iuser -Ilibary -Isystem -IHardware -I.cmsis/include -I"RTE/_Target 1" -D"USE_STDPERIPH_DRIVER" --cpu Cortex-M3 --li --c99 -O0 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o ".\build\Target 1\.obj\user\main.o" --no_depend_system_headers --depend ".\build\Target 1\.obj\user\main.d" .\user\main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\user\main.c", line 15: Error:  #147-D: declaration is incompatible with "char Check_BlackLine(void)"  (declared at line 13 of "Hardware\line.h")
+  extern uint8_t     Check_BlackLine(void);
+                     ^
+.\user\main.c: 0 warnings, 1 error
+
+[2026-05-30 16:24:10]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 16:24:10]	compilation failed at : "e:\小车\25E-Car\user\main.c", exit code: 1
+command: 
+  "D:\keil5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -Istart -Iuser -Ilibary -Isystem -IHardware -I.cmsis/include -I"RTE/_Target 1" -D"USE_STDPERIPH_DRIVER" --cpu Cortex-M3 --li --c99 -O0 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o ".\build\Target 1\.obj\user\main.o" --no_depend_system_headers --depend ".\build\Target 1\.obj\user\main.d" .\user\main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\user\main.c", line 15: Error:  #147-D: declaration is incompatible with "char Check_BlackLine(void)"  (declared at line 13 of "Hardware\line.h")
+  extern uint8_t     Check_BlackLine(void);
+                     ^
+.\user\main.c: 0 warnings, 1 error
+
+[2026-05-30 16:24:51]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 16:24:52]	[done]
+	build successfully !
+
+[2026-05-30 16:36:56]	[info] incremental build: 3 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\IMU660RA_CONFIG.c': source file has been changed.
+'e:\小车\25E-Car\Hardware\PID.c': source file has been changed.
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 16:36:57]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol MPU6050_CalibrateGyroZ (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetYaw (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetData (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_Init (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_UpdateYaw_Filtered (referred from main.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 5 error messages.
+
+
+[2026-05-30 16:37:00]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol MPU6050_CalibrateGyroZ (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetYaw (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetData (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_Init (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_UpdateYaw_Filtered (referred from main.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 5 error messages.
+
+
+[2026-05-30 16:37:05]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol MPU6050_CalibrateGyroZ (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetYaw (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetData (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_Init (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_UpdateYaw_Filtered (referred from main.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 5 error messages.
+
+
+[2026-05-30 16:46:03]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol MPU6050_CalibrateGyroZ (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetYaw (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetData (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_Init (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_UpdateYaw_Filtered (referred from main.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 5 error messages.
+
+
+[2026-05-30 17:00:23]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol MPU6050_CalibrateGyroZ (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetYaw (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetData (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_Init (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_UpdateYaw_Filtered (referred from main.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 5 error messages.
+
+
+[2026-05-30 17:00:28]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol MPU6050_CalibrateGyroZ (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetYaw (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetData (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_Init (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_UpdateYaw_Filtered (referred from main.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 5 error messages.
+
+
+[2026-05-30 17:01:23]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol MPU6050_CalibrateGyroZ (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetYaw (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetData (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_Init (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_UpdateYaw_Filtered (referred from main.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 5 error messages.
+
+
+[2026-05-30 17:02:25]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol MPU6050_CalibrateGyroZ (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetYaw (referred from PID.o).
+Error: L6218E: Undefined symbol MPU6050_GetData (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_Init (referred from main.o).
+Error: L6218E: Undefined symbol MPU6050_UpdateYaw_Filtered (referred from main.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 5 error messages.
+
+
+[2026-05-30 17:03:05]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\MPU6050.c': object (.o) file not exist
+
+[2026-05-30 17:03:05]	[done]
+	build successfully !
+
+[2026-05-30 17:03:08]	[done]
+	build successfully !
+
+[2026-05-30 17:05:42]	[done]
+	build successfully !
+
+[2026-05-30 17:09:49]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 17:09:49]	[done]
+	build successfully !
+
+[2026-05-30 17:10:49]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 17:10:49]	[done]
+	build successfully !
+
+[2026-05-30 17:11:46]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 17:11:46]	[done]
+	build successfully !
+
+[2026-05-30 17:12:06]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 17:12:06]	[done]
+	build successfully !
+
+[2026-05-30 17:13:19]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 17:13:19]	[done]
+	build successfully !
+
+[2026-05-30 17:16:16]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 17:16:16]	[done]
+	build successfully !
+
+[2026-05-30 17:18:44]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 17:18:44]	compilation failed at : "e:\小车\25E-Car\user\main.c", exit code: 1
+command: 
+  "D:\keil5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -Istart -Iuser -Ilibary -Isystem -IHardware -I.cmsis/include -I"RTE/_Target 1" -D"USE_STDPERIPH_DRIVER" --cpu Cortex-M3 --li --c99 -O0 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o ".\build\Target 1\.obj\user\main.o" --no_depend_system_headers --depend ".\build\Target 1\.obj\user\main.d" .\user\main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\user\main.c", line 210: Error:  #247: function "OLED_DisplayYaw"  has already been defined
+  static void OLED_DisplayYaw(void)
+              ^
+".\user\main.c", line 525: Warning:  #111-D: statement is unreachable
+              car_state = 0x0000;
+              ^
+.\user\main.c: 1 warning, 1 error
+
+[2026-05-30 17:19:16]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 17:19:17]	[done]
+	build successfully !
+
+[2026-05-30 17:26:36]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 17:26:36]	[done]
+	build successfully !
+
+[2026-05-30 17:32:29]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 17:32:30]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol main (referred from __rtentry2.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 1 error messages.
+
+
+[2026-05-30 17:32:44]	link failed !, exit code: 1
+   at unify_builder.Program.Main(String[] args_)
+---
+Error: L6218E: Undefined symbol main (referred from __rtentry2.o).
+Not enough information to list image symbols.
+Finished: 1 information, 0 warning and 1 error messages.
+
+
+[2026-05-30 17:33:27]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 17:33:27]	compilation failed at : "e:\小车\25E-Car\user\main.c", exit code: 1
+command: 
+  "D:\keil5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -Istart -Iuser -Ilibary -Isystem -IHardware -I.cmsis/include -I"RTE/_Target 1" -D"USE_STDPERIPH_DRIVER" --cpu Cortex-M3 --li --c99 -O0 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o ".\build\Target 1\.obj\user\main.o" --no_depend_system_headers --depend ".\build\Target 1\.obj\user\main.d" .\user\main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\user\main.c", line 210: Error:  #247: function "OLED_DisplayYaw"  has already been defined
+  static void OLED_DisplayYaw(void)
+              ^
+.\user\main.c: 0 warnings, 1 error
+
+[2026-05-30 17:33:57]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 17:33:57]	compilation failed at : "e:\小车\25E-Car\user\main.c", exit code: 1
+command: 
+  "D:\keil5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -Istart -Iuser -Ilibary -Isystem -IHardware -I.cmsis/include -I"RTE/_Target 1" -D"USE_STDPERIPH_DRIVER" --cpu Cortex-M3 --li --c99 -O0 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o ".\build\Target 1\.obj\user\main.o" --no_depend_system_headers --depend ".\build\Target 1\.obj\user\main.d" .\user\main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\user\main.c", line 210: Error:  #247: function "OLED_DisplayYaw"  has already been defined
+  static void OLED_DisplayYaw(void)
+              ^
+.\user\main.c: 0 warnings, 1 error
+
+[2026-05-30 17:34:27]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 17:34:27]	[done]
+	build successfully !
+
+[2026-05-30 17:36:06]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 17:36:07]	[done]
+	build successfully !
+
+[2026-05-30 17:38:35]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 17:38:35]	[done]
+	build successfully !
+
+[2026-05-30 17:38:45]	[done]
+	build successfully !
+
+[2026-05-30 17:45:52]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 17:45:52]	[done]
+	build successfully !
+
+[2026-05-30 17:50:35]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 17:50:36]	[done]
+	build successfully !
+
+[2026-05-30 17:53:02]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 17:53:03]	[done]
+	build successfully !
+
+[2026-05-30 17:53:15]	[done]
+	build successfully !
+
+[2026-05-30 17:56:06]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 17:56:06]	[done]
+	build successfully !
+
+[2026-05-30 17:56:12]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 17:56:13]	[done]
+	build successfully !
+
+[2026-05-30 18:04:26]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 18:04:26]	[done]
+	build successfully !
+
+[2026-05-30 18:50:18]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 18:50:18]	[done]
+	build successfully !
+
+[2026-05-30 18:53:21]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 18:53:21]	[done]
+	build successfully !
+
+[2026-05-30 18:57:16]	[done]
+	build successfully !
+
+[2026-05-30 18:59:28]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 18:59:28]	[done]
+	build successfully !
+
+[2026-05-30 19:06:36]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:06:36]	[done]
+	build successfully !
+
+[2026-05-30 19:07:09]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 19:07:09]	[done]
+	build successfully !
+
+[2026-05-30 19:08:46]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:08:46]	[done]
+	build successfully !
+
+[2026-05-30 19:09:24]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:09:24]	[done]
+	build successfully !
+
+[2026-05-30 19:09:34]	[done]
+	build successfully !
+
+[2026-05-30 19:11:27]	[done]
+	build successfully !
+
+[2026-05-30 19:12:08]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:12:09]	[done]
+	build successfully !
+
+[2026-05-30 19:12:50]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:12:51]	[done]
+	build successfully !
+
+[2026-05-30 19:13:11]	[done]
+	build successfully !
+
+[2026-05-30 19:13:48]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:13:48]	[done]
+	build successfully !
+
+[2026-05-30 19:17:03]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:17:03]	[done]
+	build successfully !
+
+[2026-05-30 19:19:40]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:19:41]	[done]
+	build successfully !
+
+[2026-05-30 19:20:16]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:20:16]	[done]
+	build successfully !
+
+[2026-05-30 19:22:10]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:22:10]	[done]
+	build successfully !
+
+[2026-05-30 19:23:43]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:23:43]	[done]
+	build successfully !
+
+[2026-05-30 19:23:53]	[done]
+	build successfully !
+
+[2026-05-30 19:28:02]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:28:02]	[done]
+	build successfully !
+
+[2026-05-30 19:31:38]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:31:39]	[done]
+	build successfully !
+
+[2026-05-30 19:32:22]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 19:32:23]	[done]
+	build successfully !
+
+[2026-05-30 19:33:12]	[done]
+	build successfully !
+
+[2026-05-30 19:34:04]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:34:05]	[done]
+	build successfully !
+
+[2026-05-30 19:34:12]	[done]
+	build successfully !
+
+[2026-05-30 19:38:43]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:38:43]	[done]
+	build successfully !
+
+[2026-05-30 19:38:55]	[done]
+	build successfully !
+
+[2026-05-30 19:41:24]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:41:25]	[done]
+	build successfully !
+
+[2026-05-30 19:41:32]	[done]
+	build successfully !
+
+[2026-05-30 19:42:37]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 19:42:37]	[done]
+	build successfully !
+
+[2026-05-30 19:43:05]	[done]
+	build successfully !
+
+[2026-05-30 19:44:30]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:44:30]	compilation failed at : "e:\小车\25E-Car\user\main.c", exit code: 1
+command: 
+  "D:\keil5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -Istart -Iuser -Ilibary -Isystem -IHardware -I.cmsis/include -I"RTE/_Target 1" -D"USE_STDPERIPH_DRIVER" --cpu Cortex-M3 --li --c99 -O0 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o ".\build\Target 1\.obj\user\main.o" --no_depend_system_headers --depend ".\build\Target 1\.obj\user\main.d" .\user\main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\user\main.c", line 359: Error:  #20: identifier "approach_heading" is undefined
+                      approach_heading = current_angle;   // 保存直行航向
+                      ^
+".\user\main.c", line 364: Error:  #20: identifier "turn_target_yaw" is undefined
+                          turn_target_yaw = current_angle - TURN_ANGLE;
+                          ^
+".\user\main.c", line 369: Error:  #20: identifier "turn_target_yaw" is undefined
+                          turn_target_yaw = current_angle + TURN_ANGLE;
+                          ^
+".\user\main.c", line 376: Error:  #20: identifier "approach_timer" is undefined
+                      approach_timer = APPROACH_MS / 20;
+                      ^
+".\user\main.c", line 377: Error:  #20: identifier "turn_in_progress" is undefined
+                      turn_in_progress = 0;
+                      ^
+".\user\main.c", line 378: Error:  #20: identifier "STATE4_APPROACH" is undefined
+                      now_state = STATE4_APPROACH;
+                                  ^
+".\user\main.c", line 383: Error:  #20: identifier "STATE4_APPROACH" is undefined
+          case STATE4_APPROACH:
+               ^
+".\user\main.c", line 385: Error:  #20: identifier "approach_heading" is undefined
+              Car_Go_Straight_To_Target(
+PPROACH_SPEED, approach_heading);
+                                                        ^
+".\user\main.c", line 387: Error:  #20: identifier "approach_timer" is undefined
+              if (approach_timer > 0)
+                  ^
+".\user\main.c", line 391: Error:  #20: identifier "approach_timer" is undefined
+              if (approach_timer == 0)
+                  ^
+".\user\main.c", line 395: Error:  #20: identifier "STATE4_TURN" is undefined
+                  now_state = STATE4_TURN;
+                              ^
+".\user\main.c", line 399: Error:  #20: identifier "STATE4_TURN" is undefined
+          case STATE4_TURN:
+               ^
+".\user\main.c", line 401: Error:  #20: identifier "turn_in_progress" is undefined
+              if (turn_in_progress == 0)
+                  ^
+".\user\main.c", line 406: Error:  #20: identifier "turn_target_yaw" is undefined
+              if (Car_Turn_To_Yaw(turn_target_yaw, TURN_SPEED))
+                                  ^
+".\user\main.c", line 417: Error:  #20: identifier "turn_in_progress" is undefined
+                      turn_in_progress = 0;
+                      ^
+".\user\main.c", line 96: Warning:  #550-D: variable "curve_direction"  was set but never used
+  static int8_t   curve_direction = 0;    /**< 当前弯道方向：1=右弯，-1=左弯 */
+                  ^
+".\user\main.c", line 97: Warning:  #550-D: variable "curve_exit_cnt"  was set but never used
+  static uint8_t  curve_exit_cnt = 0;     /**< 出弯确认计数器：连续检测到偏差在中心附近时递增 */
+                  ^
+".\user\main.c", line 98: Warning:  #550-D: variable "curve_timeout"  was set but never used
+  static uint8_t  curve_timeout = 0;      /**< 弯道超时保护：防止卡在弯道中 */
+                  ^
+.\user\main.c: 3 warnings, 15 errors
+
+[2026-05-30 19:44:32]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:44:32]	compilation failed at : "e:\小车\25E-Car\user\main.c", exit code: 1
+command: 
+  "D:\keil5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -Istart -Iuser -Ilibary -Isystem -IHardware -I.cmsis/include -I"RTE/_Target 1" -D"USE_STDPERIPH_DRIVER" --cpu Cortex-M3 --li --c99 -O0 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o ".\build\Target 1\.obj\user\main.o" --no_depend_system_headers --depend ".\build\Target 1\.obj\user\main.d" .\user\main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\user\main.c", line 359: Error:  #20: identifier "approach_heading" is undefined
+                      approach_heading = current_angle;   // 保存直行航向
+                      ^
+".\user\main.c", line 364: Error:  #20: identifier "turn_target_yaw" is undefined
+                          turn_target_yaw = current_angle - TURN_ANGLE;
+                          ^
+".\user\main.c", line 369: Error:  #20: identifier "turn_target_yaw" is undefined
+                          turn_target_yaw = current_angle + TURN_ANGLE;
+                          ^
+".\user\main.c", line 376: Error:  #20: identifier "approach_timer" is undefined
+                      approach_timer = APPROACH_MS / 20;
+                      ^
+".\user\main.c", line 377: Error:  #20: identifier "turn_in_progress" is undefined
+                      turn_in_progress = 0;
+                      ^
+".\user\main.c", line 378: Error:  #20: identifier "STATE4_APPROACH" is undefined
+                      now_state = STATE4_APPROACH;
+                                  ^
+".\user\main.c", line 383: Error:  #20: identifier "STATE4_APPROACH" is undefined
+          case STATE4_APPROACH:
+               ^
+".\user\main.c", line 385: Error:  #20: identifier "approach_heading" is undefined
+              Car_Go_Straight_To_Target(
+PPROACH_SPEED, approach_heading);
+                                                        ^
+".\user\main.c", line 387: Error:  #20: identifier "approach_timer" is undefined
+              if (approach_timer > 0)
+                  ^
+".\user\main.c", line 391: Error:  #20: identifier "approach_timer" is undefined
+              if (approach_timer == 0)
+                  ^
+".\user\main.c", line 395: Error:  #20: identifier "STATE4_TURN" is undefined
+                  now_state = STATE4_TURN;
+                              ^
+".\user\main.c", line 399: Error:  #20: identifier "STATE4_TURN" is undefined
+          case STATE4_TURN:
+               ^
+".\user\main.c", line 401: Error:  #20: identifier "turn_in_progress" is undefined
+              if (turn_in_progress == 0)
+                  ^
+".\user\main.c", line 406: Error:  #20: identifier "turn_target_yaw" is undefined
+              if (Car_Turn_To_Yaw(turn_target_yaw, TURN_SPEED))
+                                  ^
+".\user\main.c", line 417: Error:  #20: identifier "turn_in_progress" is undefined
+                      turn_in_progress = 0;
+                      ^
+".\user\main.c", line 96: Warning:  #550-D: variable "curve_direction"  was set but never used
+  static int8_t   curve_direction = 0;    /**< 当前弯道方向：1=右弯，-1=左弯 */
+                  ^
+".\user\main.c", line 97: Warning:  #550-D: variable "curve_exit_cnt"  was set but never used
+  static uint8_t  curve_exit_cnt = 0;     /**< 出弯确认计数器：连续检测到偏差在中心附近时递增 */
+                  ^
+".\user\main.c", line 98: Warning:  #550-D: variable "curve_timeout"  was set but never used
+  static uint8_t  curve_timeout = 0;      /**< 弯道超时保护：防止卡在弯道中 */
+                  ^
+.\user\main.c: 3 warnings, 15 errors
+
+[2026-05-30 19:46:00]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:46:00]	compilation failed at : "e:\小车\25E-Car\user\main.c", exit code: 1
+command: 
+  "D:\keil5\ARM\ARMCC\bin\armcc.exe" -c --apcs=interwork -Istart -Iuser -Ilibary -Isystem -IHardware -I.cmsis/include -I"RTE/_Target 1" -D"USE_STDPERIPH_DRIVER" --cpu Cortex-M3 --li --c99 -O0 --split_sections --diag_suppress=1 --diag_suppress=1295 -g -o ".\build\Target 1\.obj\user\main.o" --no_depend_system_headers --depend ".\build\Target 1\.obj\user\main.d" .\user\main.c
+   at unify_builder.Program.Main(String[] args_)
+---
+".\user\main.c", line 335: Error:  #20: identifier "CURVE_TIMEOUT_MS" is undefined
+                      curve_timeout = CURVE_TIMEOUT_MS / 20;
+                                      ^
+".\user\main.c", line 348: Error:  #20: identifier "CURVE_SPEED" is undefined
+              track_curve(CURVE_SPEED);
+                          ^
+".\user\main.c", line 356: Error:  #20: identifier "CURVE_EXIT_THRESH" is undefined
+                  if (bias > -CURVE_EXIT_THRESH && bias < CURVE_EXIT_THRESH)
+                              ^
+".\user\main.c", line 359: Error:  #20: identifier "CURVE_EXIT_CONFIRM" is undefined
+                      if (curve_exit_cnt >= CURVE_EXIT_CONFIRM || curve_timeout == 0)
+                                            ^
+.\user\main.c: 0 warnings, 4 errors
+
+[2026-05-30 19:46:44]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:46:45]	[done]
+	build successfully !
+
+[2026-05-30 19:48:06]	[done]
+	build successfully !
+
+[2026-05-30 19:48:15]	[done]
+	build successfully !
+
+[2026-05-30 19:50:21]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 19:50:22]	[done]
+	build successfully !
+
+[2026-05-30 19:54:18]	[info] incremental build: 2 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:54:18]	[done]
+	build successfully !
+
+[2026-05-30 19:56:23]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\user\main.c': source file has been changed.
+
+[2026-05-30 19:56:24]	[done]
+	build successfully !
+
+[2026-05-30 19:57:24]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 19:57:24]	[done]
+	build successfully !
+
+[2026-05-30 19:57:46]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 19:57:46]	[done]
+	build successfully !
+
+[2026-05-30 19:58:20]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 19:58:21]	[done]
+	build successfully !
+
+[2026-05-30 19:59:26]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 19:59:26]	[done]
+	build successfully !
+
+[2026-05-30 20:00:14]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 20:00:14]	[done]
+	build successfully !
+
+[2026-05-30 20:00:27]	[done]
+	build successfully !
+
+[2026-05-30 20:03:33]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 20:03:33]	[done]
+	build successfully !
+
+[2026-05-30 20:04:05]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 20:04:05]	[done]
+	build successfully !
+
+[2026-05-30 20:04:09]	[done]
+	build successfully !
+
+[2026-05-30 20:07:08]	[info] incremental build: 1 source files changed
+These source files will be recompiled
+---
+'e:\小车\25E-Car\Hardware\line.c': source file has been changed.
+
+[2026-05-30 20:07:08]	[done]
+	build successfully !
+
+[2026-05-30 20:07:24]	[done]
+	build successfully !
+
+[2026-05-30 20:07:32]	[done]
+	build successfully !
+
+[2026-05-30 20:30:22]	[done]
+	build successfully !
+
